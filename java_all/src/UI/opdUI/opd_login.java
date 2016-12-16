@@ -6,6 +6,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
+
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.ActionListener;
@@ -58,11 +60,13 @@ public class opd_login {
 		frame.getContentPane().add(password);
 		
 		account_text = new JTextField();
+		account_text.setText("请输入帐号");
 		account_text.setBounds(139, 57, 147, 21);
 		frame.getContentPane().add(account_text);
 		account_text.setColumns(10);
 		
 		password_text = new JTextField();
+		password_text.setText("请输入密码");
 		password_text.setBounds(139, 100, 147, 21);
 		frame.getContentPane().add(password_text);
 		password_text.setColumns(10);
@@ -90,6 +94,7 @@ public class opd_login {
 		login_btn.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				System.out.println("欢迎登录！！");
 				frame.dispose();
 				opd_action.main(null);
 			}

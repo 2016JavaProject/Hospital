@@ -14,6 +14,8 @@ import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.ItemListener;
+import java.awt.event.ItemEvent;
 
 public class guahao_keshi {
 
@@ -50,6 +52,8 @@ public class guahao_keshi {
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
+		JComboBox keshi_name = new JComboBox();
+		JComboBox doctor_name = new JComboBox();
 		
 		JLabel keshi = new JLabel("科室：");
 		keshi.setBounds(92, 62, 54, 18);
@@ -78,6 +82,9 @@ public class guahao_keshi {
 		confirm_btn.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				
+				System.out.println("科室："+keshi_name.getSelectedItem());//读科室里的内容
+				System.out.println("医生："+doctor_name.getSelectedItem());
 				frame.dispose();
 				guahao_success.main(null);
 			}
@@ -85,8 +92,8 @@ public class guahao_keshi {
 		confirm_btn.setBounds(236, 192, 93, 23);
 		frame.getContentPane().add(confirm_btn);
 		
-		JComboBox keshi_name = new JComboBox();
-		keshi_name.setModel(new DefaultComboBoxModel(new String[] {"脑残科", "妇产科", "皮肤科"}));
+
+		keshi_name.setModel(new DefaultComboBoxModel(new String[] {"请选择科室", "脑残科", "妇产科", "皮肤科"}));
 		keshi_name.setBounds(131, 61, 192, 21);
 		frame.getContentPane().add(keshi_name);
 		
@@ -94,8 +101,7 @@ public class guahao_keshi {
 		doctor.setBounds(92, 119, 54, 15);
 		frame.getContentPane().add(doctor);
 		
-		JComboBox doctor_name = new JComboBox();
-		doctor_name.setModel(new DefaultComboBoxModel(new String[] {"时道顺", "黄柏豪", "赵乾坤"}));
+		doctor_name.setModel(new DefaultComboBoxModel(new String[] {"请选择医生", "时道顺", "黄柏豪", "赵乾坤"}));
 		doctor_name.setBounds(131, 116, 192, 21);
 		frame.getContentPane().add(doctor_name);
 	}

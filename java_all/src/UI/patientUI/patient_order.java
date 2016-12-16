@@ -12,11 +12,12 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JTextArea;
+import javax.swing.JList;
 
 public class patient_order {
 
 	private JFrame frame;
-	private JTextField order_time_text;
 
 	/**
 	 * Launch the application.
@@ -49,6 +50,12 @@ public class patient_order {
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
+		JComboBox order_keshi_cb = new JComboBox();
+		JComboBox month = new JComboBox();
+		JComboBox day = new JComboBox();
+		JComboBox year = new JComboBox();
+		JComboBox hour = new JComboBox();
+		JComboBox minute = new JComboBox();
 		
 		JLabel order_keshi_label = new JLabel("预约科室：");
 		order_keshi_label.setBounds(77, 38, 67, 15);
@@ -57,11 +64,6 @@ public class patient_order {
 		JLabel order_time_label = new JLabel("预约时间：");
 		order_time_label.setBounds(77, 89, 67, 15);
 		frame.getContentPane().add(order_time_label);
-		
-		order_time_text = new JTextField();
-		order_time_text.setBounds(154, 86, 133, 21);
-		frame.getContentPane().add(order_time_text);
-		order_time_text.setColumns(10);
 		
 		JButton Return_btn = new JButton("返回");
 		Return_btn.addActionListener(new ActionListener() {
@@ -82,6 +84,10 @@ public class patient_order {
 		confirm_btn.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				System.out.println("预约科室："+order_keshi_cb.getSelectedItem());
+				System.out.println("预约时间："+year.getSelectedItem()+"/"+month.getSelectedItem()
+				+"/"+day.getSelectedItem()+"  "+hour.getSelectedItem()+":"+minute.getSelectedItem());
+				
 				frame.dispose();
 				success.main(null);
 				
@@ -94,14 +100,34 @@ public class patient_order {
 		confirm_btn.setBounds(241, 181, 93, 23);
 		frame.getContentPane().add(confirm_btn);
 		
-		JComboBox order_keshi_cb = new JComboBox();
-		order_keshi_cb.setModel(new DefaultComboBoxModel(new String[] {"脑残科", "妇产科", "皮肤科"}));
-		order_keshi_cb.setBounds(154, 35, 133, 21);
+		
+		order_keshi_cb.setModel(new DefaultComboBoxModel(new String[] {"选择科室", "脑残科", "妇产科", "皮肤科"}));
+		order_keshi_cb.setBounds(154, 35, 190, 21);
 		frame.getContentPane().add(order_keshi_cb);
 		
-		JLabel geshi_label = new JLabel("格式：年/月/日");
-		geshi_label.setBounds(288, 89, 146, 15);
-		frame.getContentPane().add(geshi_label);
+		
+		month.setModel(new DefaultComboBoxModel(new String[] {"月", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"}));
+		month.setBounds(220, 86, 67, 21);
+		frame.getContentPane().add(month);
+		
+		
+		day.setModel(new DefaultComboBoxModel(new String[] {"日", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"}));
+		day.setBounds(285, 86, 59, 21);
+		frame.getContentPane().add(day);
+		
+		
+		year.setModel(new DefaultComboBoxModel(new String[] {"年", "2015", "2016", "2017", "2018", "2019", "2020"}));
+		year.setBounds(154, 86, 67, 21);
+		frame.getContentPane().add(year);
+		
+		
+		hour.setModel(new DefaultComboBoxModel(new String[] {"时", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"}));
+		hour.setBounds(154, 135, 67, 21);
+		frame.getContentPane().add(hour);
+		
+		
+		minute.setModel(new DefaultComboBoxModel(new String[] {"分", "00", "10", "20", "30", "40", "50"}));
+		minute.setBounds(220, 135, 67, 21);
+		frame.getContentPane().add(minute);
 	}
-
 }

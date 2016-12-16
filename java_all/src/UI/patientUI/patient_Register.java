@@ -59,6 +59,7 @@ public class patient_Register {
 		frame.getContentPane().add(username);
 		
 		username_text = new JTextField();
+		username_text.setText("请输入姓名");
 		username_text.setBounds(186, 47, 137, 21);
 		frame.getContentPane().add(username_text);
 		username_text.setColumns(10);
@@ -68,6 +69,7 @@ public class patient_Register {
 		frame.getContentPane().add(userage);
 		
 		userage_text = new JTextField();
+		userage_text.setText("请输入年龄");
 		userage_text.setBounds(186, 83, 137, 21);
 		frame.getContentPane().add(userage_text);
 		userage_text.setColumns(10);
@@ -77,6 +79,7 @@ public class patient_Register {
 		frame.getContentPane().add(userphone);
 		
 		userphone_text = new JTextField();
+		userphone_text.setText("请输入电话号码");
 		userphone_text.setBounds(186, 125, 137, 21);
 		frame.getContentPane().add(userphone_text);
 		userphone_text.setColumns(10);
@@ -86,6 +89,7 @@ public class patient_Register {
 		frame.getContentPane().add(userID);
 		
 		userID_text = new JTextField();
+		userID_text.setText("请输入ID");
 		userID_text.setBounds(186, 167, 137, 21);
 		frame.getContentPane().add(userID_text);
 		userID_text.setColumns(10);
@@ -95,6 +99,7 @@ public class patient_Register {
 		frame.getContentPane().add(remark);
 		
 		remark_text = new JTextField();
+		remark_text.setText("请输入备注");
 		remark_text.setBounds(186, 205, 137, 21);
 		frame.getContentPane().add(remark_text);
 		remark_text.setColumns(10);
@@ -104,6 +109,7 @@ public class patient_Register {
 		frame.getContentPane().add(more_1);
 		
 		more_1_text = new JTextField();
+		more_1_text.setText("请输入more");
 		more_1_text.setBounds(186, 249, 137, 21);
 		frame.getContentPane().add(more_1_text);
 		more_1_text.setColumns(10);
@@ -113,6 +119,7 @@ public class patient_Register {
 		frame.getContentPane().add(more_2);
 		
 		more_2_text = new JTextField();
+		more_2_text.setText("请输入more");
 		more_2_text.setBounds(186, 292, 137, 21);
 		frame.getContentPane().add(more_2_text);
 		more_2_text.setColumns(10);
@@ -136,7 +143,13 @@ public class patient_Register {
 		login_btn.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				
+				System.out.println("姓名:"+username_text.getText());
+				System.out.println("年龄:"+userage_text.getText());
+				System.out.println("电话:"+userphone_text.getText());
+				System.out.println("ID:"+userID_text.getText());
+				System.out.println("备注:"+remark_text.getText());
+				System.out.println("more:"+more_1_text.getText());
+				System.out.println("more:"+more_2_text.getText());
 				
 				
 				frame.dispose();

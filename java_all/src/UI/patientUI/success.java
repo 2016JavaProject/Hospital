@@ -9,6 +9,8 @@ import java.awt.Font;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class success {
 
@@ -53,6 +55,14 @@ public class success {
 		frame.getContentPane().add(order_success);
 		
 		JButton logout_btn = new JButton("退出");
+		logout_btn.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				frame.disable();
+				java_Home.java_Home.main(null);
+				
+			}
+		});
 		logout_btn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}

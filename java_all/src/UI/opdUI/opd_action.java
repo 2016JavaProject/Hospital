@@ -4,6 +4,12 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.List;
+
 import javax.swing.JButton;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -13,6 +19,7 @@ import java.awt.event.ActionEvent;
 public class opd_action {
 
 	private JFrame frame;
+	protected Composite parent;
 
 	/**
 	 * Launch the application.
@@ -69,11 +76,23 @@ public class opd_action {
 		charge_btn.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				frame.dispose();
+				list.list.main(null);
 				
 			}
 		});
 		charge_btn.setBounds(163, 143, 93, 41);
 		frame.getContentPane().add(charge_btn);
+		
+		JButton btnNewButton = new JButton("退出");
+		btnNewButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				frame.dispose();
+				java_Home.java_Home.main(null);
+			}
+		});
+		btnNewButton.setBounds(163, 210, 93, 23);
+		frame.getContentPane().add(btnNewButton);
 	}
-
 }
