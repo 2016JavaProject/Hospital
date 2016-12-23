@@ -1,0 +1,13 @@
+1.***Frame  ---对应的GUI客户端
+  Modify**  ---系统管理员使用的对应实体的修改功能
+2.以实体命名的，如Doctor，Medicine类，包含属性定义以及数据操作。
+3.src\hospital\db  下为数据库连接类
+  src\hospital\business 下位主要界面设计·数据处理
+4.名词： admin --管理员
+	 apothecary --药师
+	 dept --部门
+	 director --院长
+	 medicine --药品
+	 outpatient --门诊处
+	 record --病人记录	 
+
