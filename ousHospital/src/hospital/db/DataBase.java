@@ -9,9 +9,9 @@ import java.sql.Statement;
 public class DataBase
 {	
 	private String driver = "com.mysql.jdbc.Driver";
-	private String url = "jdbc:mysql://localhost:3306/db_hospital_jason";
-	private String user = "root";
-	private  String password = "root";
+	private String url = "jdbc:mysql://202.120.222.168:3306/db_hospital_jason";
+	private String user = "admin";
+	private  String password = "password";
      
     
     
